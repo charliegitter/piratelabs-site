@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>pirate labs AB</title>
+<meta name="description" content="pirate labs AB – software and mobile apps.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Cpath d='M32 14c-9 0-15 6-15 14 0 5 2 8 5 10v6h20v-6c3-2 5-5 5-10 0-8-6-14-15-14z' fill='%23f2efe6'/%3E%3Ccircle cx='26' cy='29' r='4' fill='%23111'/%3E%3Ccircle cx='38' cy='29' r='4' fill='%23111'/%3E%3C/svg%3E">
+<style>
+  :root { --bg: #efece4; --ink: #121110; --muted: #77746b; --bone: #f2efe6; --pole: #121110; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font: 14px/1.7 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 56px 24px;
+  }
+  .flag { width: min(320px, 78vw); height: auto; display: block; overflow: visible; }
+  .wave { animation: wave 6s ease-in-out infinite; transform-origin: 30px 40px; }
+  @keyframes wave { 0%,100% { transform: skewY(0deg) scaleX(1); } 50% { transform: skewY(-1.2deg) scaleX(.985); } }
+  @media (prefers-reduced-motion: reduce) { .wave { animation: none; } }
+  footer { margin-top: 56px; text-align: center; color: var(--muted); letter-spacing: .01em; }
+  footer .name { color: var(--ink); font-weight: 600; letter-spacing: .04em; }
+  footer p { margin: 0; }
+  footer .gap { height: 10px; }
+  a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+  a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+  <svg class="flag" viewBox="0 0 320 260" role="img" aria-label="pirate labs flag">
+    <defs>
+      <linearGradient id="folds" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0"   stop-color="#fff" stop-opacity="0"/>
+        <stop offset=".18" stop-color="#fff" stop-opacity=".07"/>
+        <stop offset=".34" stop-color="#000" stop-opacity=".22"/>
+        <stop offset=".52" stop-color="#fff" stop-opacity=".06"/>
+        <stop offset=".7"  stop-color="#000" stop-opacity=".2"/>
+        <stop offset=".88" stop-color="#fff" stop-opacity=".05"/>
+        <stop offset="1"   stop-color="#000" stop-opacity=".18"/>
+      </linearGradient>
+      <linearGradient id="poleShade" x1="0" x2="1">
+        <stop offset="0" stop-color="#000" stop-opacity=".25"/>
+        <stop offset=".45" stop-color="#fff" stop-opacity=".18"/>
+        <stop offset="1" stop-color="#000" stop-opacity=".3"/>
+      </linearGradient>
+      <clipPath id="clothClip">
+        <path id="cloth" d="M30 34
+          C 80 18, 130 46, 182 30
+          C 222 18, 262 30, 300 22
+          L 292 34 L 304 46 L 293 58 L 306 72 L 294 86 L 305 100 L 295 112 L 304 126 L 296 138
+          C 258 146, 220 134, 182 146
+          C 130 162, 80 134, 30 150 Z"/>
+      </clipPath>
+    </defs>
+
+    <!-- pole -->
+    <rect x="22" y="14" width="9" height="240" rx="4.5" fill="var(--pole)"/>
+    <rect x="22" y="14" width="9" height="240" rx="4.5" fill="url(#poleShade)"/>
+    <circle cx="26.5" cy="12" r="8" fill="var(--pole)"/>
+    <circle cx="24" cy="9.5" r="2.4" fill="#fff" opacity=".18"/>
+
+    <g class="wave">
+      <!-- cloth -->
+      <use href="#cloth" fill="var(--ink)"/>
+      <g clip-path="url(#clothClip)">
+        <rect x="20" y="0" width="300" height="200" fill="url(#folds)"/>
+      </g>
+
+      <!-- jolly roger -->
+      <g transform="translate(166 88) rotate(-3)" fill="var(--bone)">
+        <!-- crossbones -->
+        <g transform="rotate(28)">
+          <rect x="-58" y="-5" width="116" height="10" rx="5"/>
+          <circle cx="-58" cy="-6" r="7"/><circle cx="-58" cy="6" r="7"/>
+          <circle cx="58" cy="-6" r="7"/><circle cx="58" cy="6" r="7"/>
+        </g>
+        <g transform="rotate(-28)">
+          <rect x="-58" y="-5" width="116" height="10" rx="5"/>
+          <circle cx="-58" cy="-6" r="7"/><circle cx="-58" cy="6" r="7"/>
+          <circle cx="58" cy="-6" r="7"/><circle cx="58" cy="6" r="7"/>
+        </g>
+        <!-- skull -->
+        <path d="M0 -44
+          C -25 -44 -38 -27 -38 -8
+          C -38 6 -31 15 -23 20
+          L -23 30 C -23 34 -20 36 -16 36 L 16 36 C 20 36 23 34 23 30 L 23 20
+          C 31 15 38 6 38 -8
+          C 38 -27 25 -44 0 -44 Z"/>
+      </g>
+      <g transform="translate(166 88) rotate(-3)" fill="var(--ink)">
+        <path d="M-25 -8 C -25 -17 -18 -20 -12 -18 C -6 -16 -5 -9 -7 -4 C -9 1 -14 3 -19 2 C -23 1 -25 -3 -25 -8 Z"/>
+        <path d="M25 -8 C 25 -17 18 -20 12 -18 C 6 -16 5 -9 7 -4 C 9 1 14 3 19 2 C 23 1 25 -3 25 -8 Z"/>
+        <path d="M0 6 L -5 15 Q 0 17 5 15 Z"/>
+        <rect x="-11.5" y="24" width="3" height="12" rx="1.5"/>
+        <rect x="-4" y="25" width="3" height="11" rx="1.5"/>
+        <rect x="4" y="25" width="3" height="11" rx="1.5"/>
+        <rect x="9.5" y="24" width="3" height="12" rx="1.5"/>
+      </g>
+    </g>
+  </svg>
+
+  <footer>
+    <p class="name">PIRATE LABS AB</p>
+    <p>Software &amp; mobile apps</p>
+    <div class="gap"></div>
+    <p>Reg. no 559554-8420 · VAT SE559554842001</p>
+    <p>Kivra: 559554-8420, 106 31 Stockholm, Sweden</p>
+    <p><a href="mailto:hello@piratelabs.se">hello@piratelabs.se</a></p>
+  </footer>
+</body>
+</html>
